@@ -1,0 +1,19 @@
+{% extends 'szablon.html' %}
+
+{% block title %} Startowa {% endblock %}
+
+{% block body %}
+
+{% for pozycja in pozycje %}
+    <div class="card">
+      <div class="card-body">
+         <div class="row">
+             <div class="col-sm-9">
+                 <h2>{{pozycja}}</h2>
+             </div>
+         </div>
+      </div>
+    </div>
+{% endfor %}
+
+{% endblock %}
