@@ -11,6 +11,15 @@
              <div class="col-sm-9">
                  <h2>{{pozycja}}</h2>
              </div>
+             <div class="col-sm-3">
+                 {% if pozycja.obszar_nieedytowalny == "Kajaki" %}
+                    <a href="{% url 'kajaki' %}"><i class="fas fa-2x fa-edit"></i></a>
+                 {% elif pozycja.obszar_nieedytowalny == "Trasy" %}
+                    <a href="{% url 'trasy' %}"><i class="fas fa-2x fa-edit"></i></a>
+                 {% else %}
+                    <a href="{% url 'order' %}"><i class="fas fa-2x fa-edit"></i></a>
+                 {% endif %}
+             </div>
          </div>
       </div>
     </div>

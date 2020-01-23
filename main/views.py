@@ -14,3 +14,11 @@ def startowa(request):
     return render(request, 'startowa.html', {'pozycje': pozycje})
 
 
+def kajaki(request):
+    return render(request, 'kajaki.html')
+
+
+def trasy(request):
+    return render(request, 'trasy.html')
+
+
