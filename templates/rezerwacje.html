@@ -3,8 +3,18 @@
 {% block title %} Rezerwacja {% endblock %}
 
 {% block body %}
-
-<p>Lista rezerwacji</p>
+   <div class="jumbotron" style="width: 700px">
+      <h1 class="display-6">
+          {% if user.is_authenticated %}
+                Witaj {{ user.username }}<br>
+                <a class="btn btn-primary" href="{% url 'logout' %}">Logout</a>
+          {% else %}
+                <a class="btn btn-primary" href="{% url 'login' %}">Login</a>
+          {% endif %}
+      </h1>
+       <hr class="my-8">
+       <p>Lista rezerwacji</p>
+   </div>
 
 {% for rezerwacja in rezerwacje %}
     <div class="card">
