@@ -1,0 +1,42 @@
+body { color: #444; padding: 50px; }
+
+img { width: 150px; float: left; }
+
+.card { width: 700px; }
+
+.desc { margin-left: 15px; }
+
+
+
+/* Modyfikacje stylu bootstrap */
+/*Translacja strony signup z angielskiego na poslki */
+.control-label[for="id_username"] {
+    visibility: hidden;
+}
+.control-label[for="id_username"]:before {
+    visibility: visible;
+    content: 'Nazwa użytkownika';
+
+}
+
+.control-label[for="id_password1"] {
+    visibility: hidden;
+}
+.control-label[for="id_password1"]:before {
+    visibility: visible;
+    content: 'Hasło';
+
+}
+
+.control-label[for="id_password2"] {
+    visibility: hidden;
+}
+.control-label[for="id_password2"]:before {
+    visibility: visible;
+    content: 'Powtórz hasło';
+
+}
+
+ul { font-size: 12px }
+
+.help-block { font-size: 12px }

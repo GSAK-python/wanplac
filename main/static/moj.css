@@ -9,9 +9,13 @@ img {
 }
 
 .card {
-    width: 700px
+    width: 400px;
 }
 
 .desc {
     margin-left: 15px;
+}
+
+.form-text {
+    color: red;
 }
