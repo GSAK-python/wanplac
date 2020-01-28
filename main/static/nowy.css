@@ -16,25 +16,28 @@ img { width: 150px; float: left; }
 .control-label[for="id_username"]:before {
     visibility: visible;
     content: 'Nazwa użytkownika';
-
 }
 
 .control-label[for="id_password1"] {
     visibility: hidden;
 }
+
 .control-label[for="id_password1"]:before {
     visibility: visible;
     content: 'Hasło';
-
 }
 
 .control-label[for="id_password2"] {
     visibility: hidden;
 }
+
 .control-label[for="id_password2"]:before {
     visibility: visible;
     content: 'Powtórz hasło';
+}
 
+.control-label[for="id_password"] {
+    visibility: hidden;
 }
 
 ul { font-size: 12px }
