@@ -1,0 +1,29 @@
+{% extends 'szablon.html' %}
+{% load bootstrap %}
+{% block title %} Navbar {% endblock %}
+
+{% block body %}
+
+    <nav class="navbar navbar-expand-lg navbar-light border rounded bg-primary" style="background-color: #82b1ff; width: 700px">
+        <a class="navbar-brand" href="#">
+        <img id="logo" src="/media/wanplac.png" onerror="this.onerror=null; this.src='Default.jpg'" width="100" height="77" class="d-inline-block align-top" alt="">
+        </a>
+        <div class="navbar-brand mb-0 h1" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="navbar-brand">
+                <a class="nav-link" href="{% url 'startowa' %}">Startowa</a>
+              </li>
+              <li class="navbar-brand">
+                  <a class="nav-link" href="{% url 'faq' %}">FAQ</a>
+              </li>
+              <li class="navbar-brand">
+                <a class="nav-link" href="{% url 'signup' %}">Zarejestruj się</a>
+              </li>
+              <li class="navbar-brand">
+                <a class="nav-link" href="{% url 'login' %}">Zaloguj się</a>
+              </li>
+            </ul>
+        </div>
+    </nav>
+
+{% endblock %}

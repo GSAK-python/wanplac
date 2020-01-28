@@ -40,6 +40,15 @@ img { width: 150px; float: left; }
     visibility: hidden;
 }
 
+.control-label[for="id_password"]:before {
+    visibility: visible;
+    content: 'Hasło';
+}
+
 ul { font-size: 12px }
 
 .help-block { font-size: 12px }
+
+.navbar-brand.custom{
+  color:white
+}

@@ -39,4 +39,9 @@ def signup(request):
     return render(request, 'signup.html', {'form': form})
 
 
+def navbar(request):
+    return render(request, 'navbar.html')
 
+
+def faq(request):
+    return render(request, 'faq.html')
