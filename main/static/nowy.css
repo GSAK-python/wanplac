@@ -49,6 +49,4 @@ ul { font-size: 12px }
 
 .help-block { font-size: 12px }
 
-.navbar-brand.custom {
-  color:white
-}
+.navbar-light .navbar-brand .navbar-nav .navbar-brand .nav-link { }

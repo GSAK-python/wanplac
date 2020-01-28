@@ -3,7 +3,13 @@
 {% block title %} Zaloguj sie {% endblock %}
 
 {% block body %}
-    <div class="card" style="width: 600px">
+
+{% block foo %}
+   {% include "navbar.html" %}
+{% endblock %}
+<br>
+
+    <div class="card" style="width: 700px">
       <div class="card-body">
           <h5 class="card-title">Zaloguj się</h5>
         <form role="form" method="post">

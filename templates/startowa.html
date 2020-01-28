@@ -4,24 +4,20 @@
 
 {% block body %}
 
-    <div class="jumbotron" style="width: 700px">
+{% block foo %}
+   {% include "navbar.html" %}
+{% endblock %}
+<br>
+
+    <div class="jumbotron border border-dark bg-white" style="width: 700px">
       <h1 class="display-6">
           {% if user.is_authenticated %}
           Witaj {{ user.username }}<br>
-                <a class="btn btn-primary" href="{% url 'logout' %}">Wyloguj się</a>
           {% else %}
                 Niezalogowany użytkownik<br>
-                <a class="btn btn-primary" href="{% url 'login' %}">Zaloguj się</a>
           <hr class="my-6">
             <h6><b><i>Drogi użytkowniku!</i></b><br>
-            Zanim zaczniesz korzystać z naszej aplikacji zapoznaj się z poniższymi informacjami:
-            <li>W celu przeglądania dostępnych <b>kajaków</b> nie trzeba mieć założonego konta</li>
-            <li>W celu przeglądania dostępnych <b>tras kajakowych</b> nie trzeba mieć założonego konta</li>
-            <li>Aby dokonać rezerwacji <b>niezbędne</b> jest posiadanie konta użytkownika!</li>
-            <li>Jeśli posiadasz konto, kliknij niebieski przycisk <b>Zaloguj się</b></li>
-            <li>Jeśli nie posiadasz konta, przejdź do strony rejestracji, kliknij:</li>
-            <br>
-             <a class="btn btn-primary" href="{% url 'signup' %}">Zarejestruj się</a></h6>
+                Zanim zaczeniesz korzystać z aplikacji zajrzyj do działu FAQ!
           {% endif %}
       </h1>
 
