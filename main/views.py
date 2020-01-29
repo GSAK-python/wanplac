@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect, get_object_or_404
-from .models import Order, Startowa, MyOrder
+from .models import Order, Startowa
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import login, authenticate
@@ -58,10 +58,10 @@ def nowe_zamowienie(request):
 
     return render(request, 'formularz_rezerwacji.html', {'zamowienie': zamowienie})
 
-
+# ta fcja jest po to zeby zaspisywac rezerwacje na stronie moje_rezerwacje
 @login_required
 def my_order(request):
-    moje_zamowienie = MyOrder.objects.all()
+    moje_zamowienie = Order.objects.all()
     return render(request, 'moje_rezerwacje.html', {'moje_zamowienie': moje_zamowienie})
 
 
