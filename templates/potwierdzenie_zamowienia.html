@@ -1,6 +1,6 @@
 {% extends 'szablon.html' %}
 {% load bootstrap %}
-{% block title %} Rezerwacja kajaków {% endblock %}
+{% block title %} Potwierdzenie {% endblock %}
 
 {% block body %}
 
@@ -10,14 +10,11 @@
 <br>
 
 
-    <div class="card" style="width: 600px">
+    <div class="card">
       <div class="card-body">
-          <h5 class="card-title">Rezerwacja kajaków</h5>
+          <h5 class="card-title">Potwierdzenie rezerwacji kajaków</h5>
         <form role="form" method="post" enctype="multipart/form-data">
             {% csrf_token %}
-            {{zamowienie|bootstrap}}
-            <button type="submit" class="btn btn-primary">Zapisz</button>
-            <a href="{% url 'startowa' %}">Cofnij</a>
         </form>
       </div>
     </div>

@@ -1,0 +1,27 @@
+{% extends 'szablon.html' %}
+
+{% block title %} Moje rezerwacje {% endblock %}
+
+{% block body %}
+
+{% block foo %}
+   {% include "navbar.html" %}
+{% endblock %}
+
+{% for zamowienie in moje_zamowienie %}
+    <div class="card">
+      <div class="card-body">
+         <div class="row">
+             <div class="col-sm-9">
+                 <h2>{{zamowienie}}</h2>
+             </div>
+         </div>
+          <div class="row">
+            <p class="desc">{{zamowienie.data}}</p>
+          </div>
+      </div>
+    </div>
+
+{% endfor %}
+
+{% endblock %}
