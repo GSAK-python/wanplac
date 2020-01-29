@@ -61,7 +61,7 @@ def nowe_zamowienie(request):
 
 @login_required
 def my_order(request):
-    moje_zamowienie = MyOrder.objects.all().filter(user=request.user)
+    moje_zamowienie = MyOrder.objects.all()
     return render(request, 'moje_rezerwacje.html', {'moje_zamowienie': moje_zamowienie})
 
 
