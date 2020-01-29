@@ -3,6 +3,7 @@ from .models import Order, Startowa
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import login, authenticate
+from .forms import OrderForm
 
 
 @login_required
@@ -45,3 +46,14 @@ def navbar(request):
 
 def faq(request):
     return render(request, 'faq.html')
+
+
+@login_required
+def nowe_zamowienie(request):
+    zamowienie = OrderForm(request.POST or None, request.FILES or None)
+
+    if zamowienie.is_valid():
+        zamowienie.save()
+        return redirect(order)
+
+    return render(request, 'formularz_rezerwacji.html', {'zamowienie': zamowienie})
