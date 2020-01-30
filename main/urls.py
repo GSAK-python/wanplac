@@ -1,10 +1,9 @@
 from django.urls import path
-from .views import order, startowa, kajaki, trasy, signup, navbar, faq, nowe_zamowienie, potwierdzenie_zamowienia
+from .views import startowa, kajaki, trasy, signup, navbar, faq, nowe_zamowienie, potwierdzenie_zamowienia
 from .views import my_order
 
 
 urlpatterns = [
-    path('rezerwacje/', order, name='order'),
     path('startowa/', startowa, name='startowa'),
     path('kajaki/', kajaki, name='kajaki'),
     path('trasy/', trasy, name='trasy'),

@@ -42,6 +42,7 @@ def faq(request):
     return render(request, 'faq.html')
 
 
+@login_required
 def nowe_zamowienie(request):
     zamowienie = OrderForm(request.POST or None, request.FILES or None)
 

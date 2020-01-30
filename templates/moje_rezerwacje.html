@@ -6,21 +6,11 @@
 
 {% block foo %}
    {% include "navbar.html" %}
+<br>
+   {% include "jumbotron.html" %}
 {% endblock %}
 <br>
 
-<div class="jumbotron border border-dark bg-white" style="width: 700px">
-  <h1 class="display-6">
-      {% if user.is_authenticated %}
-      Witaj {{ user.username }}<br>
-      {% else %}
-            Niezalogowany użytkownik<br>
-      <hr class="my-6">
-        <h6><b><i>Drogi użytkowniku!</i></b><br>
-            Zanim zaczeniesz korzystać z aplikacji zajrzyj do działu FAQ!
-      {% endif %}
-  </h1>
-</div>
 
 {% for zamowienie in moje_zamowienie %}
     <div class="card">

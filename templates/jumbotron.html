@@ -1,0 +1,21 @@
+{% extends 'szablon.html' %}
+{% load bootstrap %}
+{% block title %} Navbar {% endblock %}
+
+{% block body %}
+
+<div class="jumbotron border border-dark bg-white" style="width: 700px">
+  <h3 class="display-6">
+      {% if user.is_authenticated %}
+      Witaj {{ user.username }}<br>
+  </h3>
+      {% else %}
+            Niezalogowany użytkownik<br>
+      <hr class="my-6">
+        <h6><b><i>Drogi użytkowniku!</i></b><br>
+            Zanim zaczeniesz korzystać z aplikacji zajrzyj do działu FAQ!
+        </h6>
+      {% endif %}
+</div>
+
+{% endblock %}
