@@ -1,15 +1,9 @@
 from django.shortcuts import render, redirect, get_object_or_404
-from .models import Order, Startowa, MyOrder
+from .models import Startowa, MyOrder
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import login, authenticate
 from .forms import OrderForm
-
-
-@login_required
-def order(request):
-    rezerwacje = Order.objects.all()
-    return render(request, 'rezerwacje.html', {'rezerwacje': rezerwacje})
 
 
 def startowa(request):
@@ -46,7 +40,6 @@ def navbar(request):
 
 def faq(request):
     return render(request, 'faq.html')
-
 
 
 def nowe_zamowienie(request):
