@@ -5,9 +5,12 @@
 {% block body %}
 
 {% block foo %}
-   {% include "navbar.html" %}
+    {% include "navbar.html" %}
     <br>
-   {% include "jumbotron.html" %}
+    {% include "log_reg_bar.html" %}
+    <br>
+    <br>
+    {% include "jumbotron.html" %}
 {% endblock %}
 
 {% for pozycja in pozycje %}
