@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Order, Startowa
+from .models import Order, Startowa, MyOrder
 
 
 @admin.register(Order)
@@ -9,6 +9,7 @@ class OrderAdmin(admin.ModelAdmin):
     search_fields = ('data', 'trasa')
 
 admin.site.register(Startowa)
+admin.site.register(MyOrder)
 
 
 
