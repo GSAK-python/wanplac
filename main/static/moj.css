@@ -47,8 +47,5 @@ img { width: 150px; float: left; }
 
 ul { font-size: 12px }
 
-.help-block { font-size: 12px }
+.help-block { font-size: 15px }
 
-.navbar-brand.custom{
-  color:white
-}
