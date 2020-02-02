@@ -5,7 +5,8 @@
 {% block body %}
 
 {% block foo %}
-   {% include "navbar.html" %}
+    {% include "log_reg_bar.html" %}
+    {% include "navbar.html" %}
 {% endblock %}
 <br>
 
@@ -17,7 +18,7 @@
             {% csrf_token %}
             {{zamowienie|bootstrap}}
             <button type="submit" class="btn btn-primary">Zapisz</button>
-            <a href="{% url 'startowa' %}">Cofnij</a>
+            <a class="btn btn-primary" href="{% url 'startowa' %}" style="float: right">Cofnij</a>
         </form>
       </div>
     </div>
