@@ -2,7 +2,6 @@ from django.db import models
 from django.contrib.auth.models import User
 import datetime as dt
 from datetime import timedelta
-from django import forms
 
 
 class Startowa(models.Model):
@@ -12,12 +11,21 @@ class Startowa(models.Model):
         return self.obszar_nieedytowalny
 
 
+class EquipmentToChose(models.Model):
+    finder = models.CharField(max_length=100)
+    eoli = models.CharField(max_length=100)
+    traper = models.CharField(max_length=100)
+
+    def __str__(self):
+        return '{}'.format(self.finder)
+
+
 class MyOrder(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     imię = models.CharField(max_length=128)
     nazwisko = models.CharField(max_length=128)
     email = models.EmailField()
-    sprzęt = models.IntegerField()
+    sprzęt = models.ManyToManyField(EquipmentToChose)
 
     wybor_dat = {
         (0, dt.date.today().strftime('%d-%m-%Y')),
@@ -63,5 +71,6 @@ class MyOrder(models.Model):
 
     def __str__(self):
         return self.order_display()
+
 
 
