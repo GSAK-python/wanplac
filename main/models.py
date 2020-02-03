@@ -2,6 +2,7 @@ from django.db import models
 from django.contrib.auth.models import User
 import datetime as dt
 from datetime import timedelta
+from django import forms
 
 
 class Startowa(models.Model):
@@ -15,9 +16,8 @@ class MyOrder(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     imię = models.CharField(max_length=128)
     nazwisko = models.CharField(max_length=128)
-
     email = models.EmailField()
-    sprzęt = models.TextField(default='')
+    sprzęt = models.IntegerField()
 
     wybor_dat = {
         (0, dt.date.today().strftime('%d-%m-%Y')),
@@ -63,3 +63,5 @@ class MyOrder(models.Model):
 
     def __str__(self):
         return self.order_display()
+
+

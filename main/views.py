@@ -54,6 +54,26 @@ def nowe_zamowienie(request):
 
     return render(request, 'formularz_rezerwacji.html', {'zamowienie': zamowienie})
 
+"""
+Funkcja tworząca FORM. Niestety dla form nie działa metoda save() wiec zostawiam to na razie
+
+@login_required
+def wybor_kajakow(request):
+    if request.method == 'POST':
+        n = KajakiForm(request.POST)
+
+        if n.is_valid():
+            post2 = n.save(commit=False)
+            post2.user = request.user
+            n.save()
+            return redirect(potwierdzenie_zamowienia)
+    else:
+        n = KajakiForm()
+
+    return render(request, 'kajaki_form.html', {'n': n})
+"""
+
+
 
 # ta fcja jest po to zeby zaspisywac rezerwacje na stronie moje_rezerwacje
 @login_required

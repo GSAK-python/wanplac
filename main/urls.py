@@ -14,4 +14,5 @@ urlpatterns = [
     path('potwierdzenie_zamowienia/', potwierdzenie_zamowienia, name='potwierdzenie_zamowienia'),
     path('moje_rezerwacje/', my_order, name='my_order')
 
+
 ]
