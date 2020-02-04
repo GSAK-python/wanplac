@@ -1,0 +1,23 @@
+{% extends 'szablon.html' %}
+{% load bootstrap %}
+{% block title %} Rezerwacja kajaków {% endblock %}
+
+{% block body %}
+
+{% block foo %}
+    {% include "log_reg_bar.html" %}
+    {% include "navbar.html" %}
+{% endblock %}
+<br>
+    <div class="card">
+      <div class="card-body">
+          <h5 class="card-title">Rezerwacja kajaków</h5>
+        <form role="form" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{zamowienie2|bootstrap}}
+            <button type="submit" class="btn btn-primary">Zapisz</button>
+            <a class="btn btn-primary" href="{% url 'startowa' %}" style="float: right">Cofnij</a>
+        </form>
+      </div>
+    </div>
+{% endblock %}

@@ -3,7 +3,7 @@ from .models import Startowa, MyOrder
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import login, authenticate
-from .forms import OrderForm
+from .forms import OrderForm, OrderForm2
 
 
 def startowa(request):
@@ -54,25 +54,6 @@ def nowe_zamowienie(request):
 
     return render(request, 'formularz_rezerwacji.html', {'zamowienie': zamowienie})
 
-"""
-Funkcja tworząca FORM. Niestety dla form nie działa metoda save() wiec zostawiam to na razie
-
-@login_required
-def wybor_kajakow(request):
-    if request.method == 'POST':
-        n = KajakiForm(request.POST)
-
-        if n.is_valid():
-            post2 = n.save(commit=False)
-            post2.user = request.user
-            n.save()
-            return redirect(potwierdzenie_zamowienia)
-    else:
-        n = KajakiForm()
-
-    return render(request, 'kajaki_form.html', {'n': n})
-"""
-
 
 # ta fcja jest po to zeby zaspisywac rezerwacje na stronie moje_rezerwacje
 @login_required
@@ -84,3 +65,15 @@ def my_order(request):
 def potwierdzenie_zamowienia(request):
     return render(request, 'potwierdzenie_zamowienia.html')
 
+
+@login_required
+def nowe_zamowienie2(request):
+    zamowienie2 = OrderForm2(request.POST or None, request.FILES or None)
+
+    if zamowienie2.is_valid():
+        post = zamowienie2.save(commit=False)
+        post.user = request.user
+        zamowienie2.save()
+        return redirect(potwierdzenie_zamowienia)
+
+    return render(request, 'form_testowy.html', {'zamowienie2': zamowienie2})
