@@ -28,6 +28,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'bootstrapform',
+    'crispy_forms',
     'main'
 ]
 
@@ -128,3 +129,5 @@ AUTHENTICATION_BACKENDS = [
 MEDIA_URL = '/media/'
 
 MEDIA_ROOT = 'media'
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'

@@ -2,6 +2,7 @@ from django.contrib import admin
 from .models import Startowa, MyOrder, EquipmentToChose
 
 
+
 # @admin.register(Order)
 # class OrderAdmin(admin.ModelAdmin):
 #     list_filter = ('data', 'godzina')
@@ -11,6 +12,7 @@ from .models import Startowa, MyOrder, EquipmentToChose
 admin.site.register(Startowa)
 admin.site.register(MyOrder)
 admin.site.register(EquipmentToChose)
+
 
 
 

@@ -35,8 +35,7 @@ class MyOrder(models.Model):
         (5, (dt.date.today() + timedelta(days=+5)).strftime('%d-%m-%Y')),
         (6, (dt.date.today() + timedelta(days=+6)).strftime('%d-%m-%Y'))
     }
-    wybor_dat_posortowany = sorted(wybor_dat)
-    data = models.IntegerField(choices=wybor_dat_posortowany)
+    data = models.IntegerField(choices=sorted(wybor_dat))
 
     wybor_tras = {
         (0, 'Krutyń - Młyn (3km)'),
@@ -44,8 +43,7 @@ class MyOrder(models.Model):
         (2, 'Krutyń - Ukta (13km)'),
         (3, 'Krutyń - Jezioro Mokre - Krutyń (10km)')
     }
-    wobor_tras_posortowany = sorted(wybor_tras)
-    trasa = models.IntegerField(choices=wobor_tras_posortowany)
+    trasa = models.IntegerField(choices=sorted(wybor_tras))
 
     wybor_godzin = {
         (0, '9:00'),
@@ -62,8 +60,7 @@ class MyOrder(models.Model):
         (11, '11:45'),
         (12, '12:00')
     }
-    wybor_godzin_posortowany = sorted(wybor_godzin)
-    godzina = models.IntegerField(choices=wybor_godzin_posortowany)
+    godzina = models.IntegerField(choices=sorted(wybor_godzin))
 
     def order_display(self):
         return 'Zamówienie: {} {}'.format(self.imię, self.nazwisko)
@@ -71,5 +68,99 @@ class MyOrder(models.Model):
     def __str__(self):
         return self.order_display()
 
+    traper_ilosc = {
+        (0, '0'),
+        (1, '1'),
+        (2, '2'),
+        (3, '3'),
+        (4, '4')
+    }
+    traper = models.IntegerField(blank=True, default=0, choices=sorted(traper_ilosc))
 
+    jett_ilosc = {
+        (0, '0'),
+        (1, '1'),
+    }
+    jett = models.IntegerField(blank=True, default=0, choices=sorted(jett_ilosc))
 
+    finder_ilosc = {
+        (0, '0'),
+        (1, '1'),
+        (2, '2'),
+        (3, '3'),
+        (4, '4'),
+        (5, '5'),
+        (6, '6'),
+        (7, '7'),
+        (8, '8'),
+        (9, '9'),
+        (10, '10'),
+        (11, '11'),
+        (12, '12'),
+        (13, '13'),
+        (14, '14'),
+        (15, '15'),
+        (16, '16'),
+        (17, '17'),
+        (18, '18'),
+        (19, '19'),
+        (20, '20'),
+        (21, '21'),
+        (22, '22'),
+        (23, '23'),
+        (24, '24')
+    }
+    finder = models.IntegerField(blank=True, default=0, choices=sorted(finder_ilosc))
+
+    eoli_ilosc = {
+        (0, '0'),
+        (1, '1'),
+        (2, '2'),
+        (3, '3'),
+        (4, '4'),
+        (5, '5'),
+        (6, '6'),
+        (7, '7'),
+        (8, '8'),
+        (9, '9'),
+        (10, '10')
+    }
+    eoli = models.IntegerField(blank=True, default=0, choices=sorted(eoli_ilosc))
+
+    protour_ilosc = {
+        (0, '0'),
+        (1, '1'),
+        (2, '2'),
+        (3, '3'),
+        (4, '4'),
+        (5, '5'),
+        (6, '6'),
+        (7, '7'),
+        (8, '8')
+    }
+    protour = models.IntegerField(blank=True, default=0, choices=sorted(protour_ilosc))
+
+    family_ilosc = {
+        (0, '0'),
+        (1, '1'),
+        (2, '2'),
+        (3, '3'),
+        (4, '4')
+    }
+    family = models.IntegerField(blank=True, default=0, choices=sorted(family_ilosc))
+
+    koga_ilosc = {
+        (0, '0'),
+        (1, '1'),
+        (2, '2'),
+        (3, '3')
+    }
+    koga = models.IntegerField(blank=True, default=0, choices=sorted(koga_ilosc))
+
+    kanu_ilosc = {
+        (0, '0'),
+        (1, '1'),
+        (2, '2'),
+        (3, '3')
+    }
+    kanu = models.IntegerField(blank=True, default=0, choices=sorted(kanu_ilosc))
