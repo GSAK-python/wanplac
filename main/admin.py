@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Startowa,  EquipmentToChose, MyOrder
+from .models import Startowa, MyOrder, EquipmentToChose
 
 
 # @admin.register(Order)

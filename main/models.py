@@ -12,12 +12,11 @@ class Startowa(models.Model):
 
 
 class EquipmentToChose(models.Model):
-    finder = models.CharField(max_length=100)
-    eoli = models.CharField(max_length=100)
-    traper = models.CharField(max_length=100)
+    rodzaj = models.CharField(max_length=50)
+    ilosc = models.IntegerField()
 
     def __str__(self):
-        return '{}'.format(self.finder)
+        return '{}, {}'.format(self.rodzaj, self.ilosc)
 
 
 class MyOrder(models.Model):

@@ -74,12 +74,10 @@ def wybor_kajakow(request):
 """
 
 
-
 # ta fcja jest po to zeby zaspisywac rezerwacje na stronie moje_rezerwacje
 @login_required
 def my_order(request):
     moje_zamowienie = MyOrder.objects.filter(user=request.user)
-    # moje_zamowienie = Order.objects.all()
     return render(request, 'moje_rezerwacje.html', {'moje_zamowienie': moje_zamowienie})
 
 
