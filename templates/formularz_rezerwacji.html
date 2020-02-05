@@ -17,9 +17,12 @@
           <h5 class="card-title">Rezerwacja kajaków</h5>
         <form role="form" method="post" enctype="multipart/form-data">
             {% csrf_token %}
+            <div>
+                {{ zamowienie.kod|as_crispy_field }}
+            </div>
             <div class="row">
                 <div class="col-6">
-                    {{ zamowienie.imię|as_crispy_field }}
+                    {{ zamowienie.imie|as_crispy_field }}
                 </div>
                 <div class="col-6">
                     {{ zamowienie.nazwisko|as_crispy_field }}
@@ -82,9 +85,6 @@
                 </div>
             </div>
             <br>
-            <div>
-                <p>A random value,{% kod_generator 100 999 %}</p>
-            </div>
             <br>
             <br>
             <button type="submit" class="btn btn-primary">Zapisz</button>

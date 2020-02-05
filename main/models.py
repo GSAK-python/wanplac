@@ -2,8 +2,7 @@ from django.db import models
 from django.contrib.auth.models import User
 import datetime as dt
 from datetime import timedelta
-import random
-from django import template
+from .templatetags.kod_generator import random_string
 
 
 class Startowa(models.Model):
@@ -15,7 +14,7 @@ class Startowa(models.Model):
 
 class MyOrder(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    imię = models.CharField(max_length=128)
+    imie = models.CharField(max_length=128)
     nazwisko = models.CharField(max_length=128)
     email = models.EmailField()
 
@@ -152,8 +151,10 @@ class MyOrder(models.Model):
     }
     kanu = models.IntegerField(blank=True, default=0, choices=sorted(kanu_ilosc))
 
+    kod = models.CharField(max_length=6, default=random_string)
+
     def order_display(self):
-        return 'Zamówienie: {} {}'.format(self.imię, self.nazwisko)
+        return 'Zamówienie: {} {}'.format(self.imie, self.nazwisko)
 
     def __str__(self):
         return self.order_display()
