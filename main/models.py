@@ -2,6 +2,8 @@ from django.db import models
 from django.contrib.auth.models import User
 import datetime as dt
 from datetime import timedelta
+import uuid
+import random
 
 
 class Startowa(models.Model):
@@ -11,20 +13,11 @@ class Startowa(models.Model):
         return self.obszar_nieedytowalny
 
 
-class EquipmentToChose(models.Model):
-    rodzaj = models.CharField(max_length=50)
-    ilosc = models.IntegerField()
-
-    def __str__(self):
-        return '{}, {}'.format(self.rodzaj, self.ilosc)
-
-
 class MyOrder(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     imię = models.CharField(max_length=128)
     nazwisko = models.CharField(max_length=128)
     email = models.EmailField()
-    sprzęt = models.ManyToManyField(EquipmentToChose)
 
     wybor_dat = {
         (0, dt.date.today().strftime('%d-%m-%Y')),
@@ -61,12 +54,6 @@ class MyOrder(models.Model):
         (12, '12:00')
     }
     godzina = models.IntegerField(choices=sorted(wybor_godzin))
-
-    def order_display(self):
-        return 'Zamówienie: {} {}'.format(self.imię, self.nazwisko)
-
-    def __str__(self):
-        return self.order_display()
 
     traper_ilosc = {
         (0, '0'),
@@ -164,3 +151,18 @@ class MyOrder(models.Model):
         (3, '3')
     }
     kanu = models.IntegerField(blank=True, default=0, choices=sorted(kanu_ilosc))
+
+    @staticmethod
+    def kod_generator():
+        return random.randint(1000, 9999)
+
+    kod = models.CharField(max_length=6, default=random.randint(1000, 9999))
+
+    def order_display(self):
+        return 'Zamówienie: {} {}'.format(self.imię, self.nazwisko)
+
+    def __str__(self):
+        return self.order_display()
+
+
+

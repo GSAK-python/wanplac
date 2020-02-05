@@ -80,6 +80,10 @@
                 </div>
             </div>
             <br>
+            <div>
+                {{ zamowienie2.kod|as_crispy_field }}
+            </div>
+            <br>
             <br>
             <button type="submit" class="btn btn-primary">Zapisz</button>
             <a class="btn btn-primary" href="{% url 'startowa' %}" style="float: right">Cofnij</a>

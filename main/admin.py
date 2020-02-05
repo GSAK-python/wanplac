@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Startowa, MyOrder, EquipmentToChose
+from .models import Startowa, MyOrder
 
 
 
@@ -11,7 +11,7 @@ from .models import Startowa, MyOrder, EquipmentToChose
 
 admin.site.register(Startowa)
 admin.site.register(MyOrder)
-admin.site.register(EquipmentToChose)
+
 
 
 

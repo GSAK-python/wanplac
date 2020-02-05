@@ -3,7 +3,7 @@ from .models import Startowa, MyOrder
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import login, authenticate
-from .forms import OrderForm, OrderForm2
+from .forms import OrderForm
 
 
 def startowa(request):
