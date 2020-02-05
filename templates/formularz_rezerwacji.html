@@ -2,6 +2,7 @@
 {% load bootstrap %}
 {% load crispy_forms_tags %}
 {% block title %} Rezerwacja kajaków {% endblock %}
+{% load kod_generator %}
 
 {% block body %}
 
@@ -82,7 +83,7 @@
             </div>
             <br>
             <div>
-                {{ zamowienie.kod|as_crispy_field }}
+                <p>A random value,{% kod_generator 100 999 %}</p>
             </div>
             <br>
             <br>
@@ -91,7 +92,7 @@
         </form>
       </div>
 </div>
-
+{% endblock %}
 <!--<div class="card">-->
 <!--  <div class="card-body">-->
 <!--      <h5 class="card-title">Rezerwacja kajaków</h5>-->
@@ -103,4 +104,3 @@
 <!--    </form>-->
 <!--  </div>-->
 <!--</div>-->
-{% endblock %}

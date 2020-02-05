@@ -2,8 +2,8 @@ from django.db import models
 from django.contrib.auth.models import User
 import datetime as dt
 from datetime import timedelta
-import uuid
 import random
+from django import template
 
 
 class Startowa(models.Model):
@@ -151,12 +151,6 @@ class MyOrder(models.Model):
         (3, '3')
     }
     kanu = models.IntegerField(blank=True, default=0, choices=sorted(kanu_ilosc))
-
-    @staticmethod
-    def kod_generator():
-        return random.randint(1000, 9999)
-
-    kod = models.CharField(max_length=6, default=random.randint(1000, 9999))
 
     def order_display(self):
         return 'Zamówienie: {} {}'.format(self.imię, self.nazwisko)
