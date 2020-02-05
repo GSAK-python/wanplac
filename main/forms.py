@@ -1,12 +1,12 @@
 from django.forms import ModelForm
-from .models import MyOrder
+from .models import Terminy
 from django import forms
 
 
 class OrderForm(ModelForm):
 
     class Meta:
-        model = MyOrder
+        model = Terminy.MyOrder
         fields = ['imie', 'nazwisko', 'email', 'data', 'godzina', 'trasa',
                   'traper', 'jett', 'finder', 'eoli', 'protour', 'family', 'koga', 'kanu', 'kod']
         help_texts = {
@@ -20,5 +20,6 @@ class OrderForm(ModelForm):
             'kod': 'Unikalny numer zamówienia'
         }
         widgets = {
-            'kod': forms.TextInput(attrs={'readonly':'readonly'})
+            'kod': forms.TextInput(attrs={'readonly':'readonly'}),
+            'stan': forms.TextInput(attrs={'readonly': 'readonly'})
         }
