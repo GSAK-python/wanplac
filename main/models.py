@@ -70,8 +70,6 @@ class Terminy(models.Model):
             (0, '0'),
             (1, '1'),
         }
-        jett = models.IntegerField(blank=True, default=0, choices=sorted(jett_ilosc))
-
         finder_ilosc = {
             (0, '0'),
             (1, '1'),
@@ -99,8 +97,6 @@ class Terminy(models.Model):
             (23, '23'),
             (24, '24')
         }
-        finder = models.IntegerField(blank=True, default=0, choices=sorted(finder_ilosc))
-
         eoli_ilosc = {
             (0, '0'),
             (1, '1'),
@@ -114,8 +110,6 @@ class Terminy(models.Model):
             (9, '9'),
             (10, '10')
         }
-        eoli = models.IntegerField(blank=True, default=0, choices=sorted(eoli_ilosc))
-
         protour_ilosc = {
             (0, '0'),
             (1, '1'),
@@ -127,8 +121,6 @@ class Terminy(models.Model):
             (7, '7'),
             (8, '8')
         }
-        protour = models.IntegerField(blank=True, default=0, choices=sorted(protour_ilosc))
-
         family_ilosc = {
             (0, '0'),
             (1, '1'),
@@ -136,28 +128,31 @@ class Terminy(models.Model):
             (3, '3'),
             (4, '4')
         }
-        family = models.IntegerField(blank=True, default=0, choices=sorted(family_ilosc))
-
         koga_ilosc = {
             (0, '0'),
             (1, '1'),
             (2, '2'),
             (3, '3')
         }
-        koga = models.IntegerField(blank=True, default=0, choices=sorted(koga_ilosc))
-
         kanu_ilosc = {
             (0, '0'),
             (1, '1'),
             (2, '2'),
             (3, '3')
         }
+
+        jett = models.IntegerField(blank=True, default=0, choices=sorted(jett_ilosc))
+        finder = models.IntegerField(blank=True, default=0, choices=sorted(finder_ilosc))
+        eoli = models.IntegerField(blank=True, default=0, choices=sorted(eoli_ilosc))
+        protour = models.IntegerField(blank=True, default=0, choices=sorted(protour_ilosc))
+        family = models.IntegerField(blank=True, default=0, choices=sorted(family_ilosc))
+        koga = models.IntegerField(blank=True, default=0, choices=sorted(koga_ilosc))
         kanu = models.IntegerField(blank=True, default=0, choices=sorted(kanu_ilosc))
 
         kod = models.CharField(max_length=6, default=random_string)
 
         def order_display(self):
-            return 'Zamówienie: {} {}'.format(self.imie, self.nazwisko)
+            return 'Imię i nazwisko: {} {}'.format(self.imie, self.nazwisko)
 
         def __str__(self):
             return self.order_display()

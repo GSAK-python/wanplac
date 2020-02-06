@@ -70,7 +70,3 @@ def potwierdzenie_zamowienia(request):
 
 
 
-
-
-
-

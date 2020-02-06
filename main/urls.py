@@ -12,5 +12,5 @@ urlpatterns = [
     path('faq/', faq, name='faq'),
     path('nowe_zamowienie/', nowe_zamowienie, name='nowe_zamowienie'),
     path('potwierdzenie_zamowienia/', potwierdzenie_zamowienia, name='potwierdzenie_zamowienia'),
-    path('moje_rezerwacje/', my_order, name='my_order')
+    path('moje_rezerwacje/', my_order, name='my_order'),
 ]

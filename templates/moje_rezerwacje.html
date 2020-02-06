@@ -14,20 +14,73 @@
 
 
 {% for zamowienie in moje_zamowienie %}
-    <div class="card">
+    <div class="card border-dark">
       <div class="card-body">
-         <div class="row">
-             <div class="col-sm-9">
-                 <h2>{{zamowienie}}</h2>
+         <div class="row justify-content-between">
+             <div class="ml-3">
+                 <h2 style="font-size: 17px">{{zamowienie}}</h2>
+             </div>
+             <div class="mr-3">
+                 <h2 style="font-size: 17px">Numer zamówienia: {{zamowienie.kod}}</h2>
              </div>
          </div>
-          <div class="row">
-            <p class="desc">{{zamowienie.get_data_display}}</p>
-              <p class="desc">{{zamowienie.get_godzina_display}}</p>
+          <div class="row justify-content-start mt-3">
+                <div>
+                    <p class="desc"><b>Data</b>: {{zamowienie.get_data_display}}</p>
+                </div>
+                <div class="">
+                     <p class="desc"><b>Godzina</b>: {{zamowienie.get_godzina_display}}</p>
+                </div>
           </div>
+          <div class="row my-1">
+              <p class="desc"><b>Trasa</b>: {{zamowienie.get_trasa_display}}</p>
+          </div>
+          <div class="border bh-light rounded col-sm-6 border-info">
+                    <p class="text-info">Wynajęty sprzęt:</p>
+                    {% if zamowienie.eoli > 0%}
+                        <div>
+                            <p>Eoli &#8594 {{zamowienie.eoli}}</p>
+                        </div>
+                    {% endif %}
+                    {% if zamowienie.finder > 0%}
+                        <div>
+                            <p>Finder &#8594 {{zamowienie.finder}}</p>
+                        </div>
+                    {% endif %}
+                    {% if zamowienie.protour > 0%}
+                        <div>
+                            <p>Pro-tour &#8594 {{zamowienie.protour}}</p>
+                        </div>
+                    {% endif %}
+                    {% if zamowienie.traper > 0%}
+                        <div>
+                            <p>Traper &#8594 {{zamowienie.traper}}</p>
+                        </div>
+                    {% endif %}
+                    {% if zamowienie.jett > 0%}
+                        <div>
+                            <p>Jett &#8594 {{zamowienie.jett}}</p>
+                        </div>
+                    {% endif %}
+                    {% if zamowienie.family > 0%}
+                        <div>
+                            <p>Family &#8594 {{zamowienie.family}}</p>
+                        </div>
+                    {% endif %}
+                    {% if zamowienie.koga > 0%}
+                        <div>
+                            <p>Koga &#8594 {{zamowienie.koga}}</p>
+                        </div>
+                    {% endif %}
+                    {% if zamowienie.kanu > 0%}
+                        <div>
+                            <p>Kanu &#8594 {{zamowienie.kanu}}</p>
+                        </div>
+                    {% endif %}
+                </div>
       </div>
     </div>
-
+<br>
 {% endfor %}
 
 {% endblock %}
