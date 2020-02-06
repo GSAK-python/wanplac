@@ -35,8 +35,11 @@
           <div class="row my-1">
               <p class="desc"><b>Trasa</b>: {{zamowienie.get_trasa_display}}</p>
           </div>
-          <div class="border bh-light rounded col-sm-6 border-info">
-                    <p class="text-info">Wynajęty sprzęt:</p>
+          <div class="row my-1">
+              <p class="desc"><b>Email</b>: {{zamowienie.email}}</p>
+          </div>
+          <div class="border bh-light rounded col-sm-6 border-primary">
+                    <p class="text-primary">Wynajęty sprzęt:</p>
                     {% if zamowienie.eoli > 0%}
                         <div>
                             <p>Eoli &#8594 {{zamowienie.eoli}}</p>

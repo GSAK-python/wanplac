@@ -12,12 +12,13 @@ class OrderForm(ModelForm):
         help_texts = {
             'data': 'Maksymalna data rezerwacji wynosi 7 dni od dnia dzisiejszego.',
             'godzina': 'Możliwość rezerwacji kajaków obowiązuje w godzinach 9:00 - 12:00',
-            'kod': 'Należy go podać w celu weryfikacji zamówienia podczas wydawania kajaków (w siedzibie firmy w Krutyni)'
+            'kod': 'Należy go podać w celu weryfikacji zamówienia podczas wydawania kajaków (w siedzibie firmy w Krutyni)',
+            'email': 'Na adres email zostanie wysłane potwierdzenie rezerwacji.'
         }
         labels = {
             'imie': 'Imię',
             'protour': 'Pro-tour',
-            'kod': 'Unikalny numer zamówienia'
+            'kod': 'Unikalny numer zamówienia',
         }
         widgets = {
             'kod': forms.TextInput(attrs={'readonly':'readonly'}),
